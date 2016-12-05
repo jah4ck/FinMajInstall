@@ -35,6 +35,30 @@ namespace FinMajInstall.ReferenceWSCtrlPc {
         
         private System.Threading.SendOrPostCallback TraceLogOperationCompleted;
         
+        private System.Threading.SendOrPostCallback TraceLogNewOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPlanningOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetArretOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPlageHoraireOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetRemLogInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDownloadFileOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetDownloadFileOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetExecProgramOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetExecProgramOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetExceptionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetDateDerniereConnexionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetIncrementeRelicaOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +105,42 @@ namespace FinMajInstall.ReferenceWSCtrlPc {
         
         /// <remarks/>
         public event TraceLogCompletedEventHandler TraceLogCompleted;
+        
+        /// <remarks/>
+        public event TraceLogNewCompletedEventHandler TraceLogNewCompleted;
+        
+        /// <remarks/>
+        public event GetPlanningCompletedEventHandler GetPlanningCompleted;
+        
+        /// <remarks/>
+        public event GetArretCompletedEventHandler GetArretCompleted;
+        
+        /// <remarks/>
+        public event GetPlageHoraireCompletedEventHandler GetPlageHoraireCompleted;
+        
+        /// <remarks/>
+        public event GetRemLogInfoCompletedEventHandler GetRemLogInfoCompleted;
+        
+        /// <remarks/>
+        public event GetDownloadFileCompletedEventHandler GetDownloadFileCompleted;
+        
+        /// <remarks/>
+        public event SetDownloadFileCompletedEventHandler SetDownloadFileCompleted;
+        
+        /// <remarks/>
+        public event GetExecProgramCompletedEventHandler GetExecProgramCompleted;
+        
+        /// <remarks/>
+        public event SetExecProgramCompletedEventHandler SetExecProgramCompleted;
+        
+        /// <remarks/>
+        public event GetExceptionCompletedEventHandler GetExceptionCompleted;
+        
+        /// <remarks/>
+        public event SetDateDerniereConnexionCompletedEventHandler SetDateDerniereConnexionCompleted;
+        
+        /// <remarks/>
+        public event SetIncrementeRelicaCompletedEventHandler SetIncrementeRelicaCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -180,6 +240,372 @@ namespace FinMajInstall.ReferenceWSCtrlPc {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/TraceLogNew", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string TraceLogNew(string guid, System.DateTime dateTraitement, string codeappli, int codeerreur, string description) {
+            object[] results = this.Invoke("TraceLogNew", new object[] {
+                        guid,
+                        dateTraitement,
+                        codeappli,
+                        codeerreur,
+                        description});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TraceLogNewAsync(string guid, System.DateTime dateTraitement, string codeappli, int codeerreur, string description) {
+            this.TraceLogNewAsync(guid, dateTraitement, codeappli, codeerreur, description, null);
+        }
+        
+        /// <remarks/>
+        public void TraceLogNewAsync(string guid, System.DateTime dateTraitement, string codeappli, int codeerreur, string description, object userState) {
+            if ((this.TraceLogNewOperationCompleted == null)) {
+                this.TraceLogNewOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTraceLogNewOperationCompleted);
+            }
+            this.InvokeAsync("TraceLogNew", new object[] {
+                        guid,
+                        dateTraitement,
+                        codeappli,
+                        codeerreur,
+                        description}, this.TraceLogNewOperationCompleted, userState);
+        }
+        
+        private void OnTraceLogNewOperationCompleted(object arg) {
+            if ((this.TraceLogNewCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TraceLogNewCompleted(this, new TraceLogNewCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPlanning", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetPlanning(string guid) {
+            object[] results = this.Invoke("GetPlanning", new object[] {
+                        guid});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPlanningAsync(string guid) {
+            this.GetPlanningAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void GetPlanningAsync(string guid, object userState) {
+            if ((this.GetPlanningOperationCompleted == null)) {
+                this.GetPlanningOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPlanningOperationCompleted);
+            }
+            this.InvokeAsync("GetPlanning", new object[] {
+                        guid}, this.GetPlanningOperationCompleted, userState);
+        }
+        
+        private void OnGetPlanningOperationCompleted(object arg) {
+            if ((this.GetPlanningCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPlanningCompleted(this, new GetPlanningCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetArret", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetArret(string guid) {
+            object[] results = this.Invoke("GetArret", new object[] {
+                        guid});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetArretAsync(string guid) {
+            this.GetArretAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void GetArretAsync(string guid, object userState) {
+            if ((this.GetArretOperationCompleted == null)) {
+                this.GetArretOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetArretOperationCompleted);
+            }
+            this.InvokeAsync("GetArret", new object[] {
+                        guid}, this.GetArretOperationCompleted, userState);
+        }
+        
+        private void OnGetArretOperationCompleted(object arg) {
+            if ((this.GetArretCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetArretCompleted(this, new GetArretCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPlageHoraire", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetPlageHoraire(string guid, System.DateTime dateheure) {
+            object[] results = this.Invoke("GetPlageHoraire", new object[] {
+                        guid,
+                        dateheure});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPlageHoraireAsync(string guid, System.DateTime dateheure) {
+            this.GetPlageHoraireAsync(guid, dateheure, null);
+        }
+        
+        /// <remarks/>
+        public void GetPlageHoraireAsync(string guid, System.DateTime dateheure, object userState) {
+            if ((this.GetPlageHoraireOperationCompleted == null)) {
+                this.GetPlageHoraireOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPlageHoraireOperationCompleted);
+            }
+            this.InvokeAsync("GetPlageHoraire", new object[] {
+                        guid,
+                        dateheure}, this.GetPlageHoraireOperationCompleted, userState);
+        }
+        
+        private void OnGetPlageHoraireOperationCompleted(object arg) {
+            if ((this.GetPlageHoraireCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPlageHoraireCompleted(this, new GetPlageHoraireCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetRemLogInfo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetRemLogInfo(string guid) {
+            object[] results = this.Invoke("GetRemLogInfo", new object[] {
+                        guid});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetRemLogInfoAsync(string guid) {
+            this.GetRemLogInfoAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void GetRemLogInfoAsync(string guid, object userState) {
+            if ((this.GetRemLogInfoOperationCompleted == null)) {
+                this.GetRemLogInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetRemLogInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetRemLogInfo", new object[] {
+                        guid}, this.GetRemLogInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetRemLogInfoOperationCompleted(object arg) {
+            if ((this.GetRemLogInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetRemLogInfoCompleted(this, new GetRemLogInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetDownloadFile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetDownloadFile(string guid, System.DateTime date) {
+            object[] results = this.Invoke("GetDownloadFile", new object[] {
+                        guid,
+                        date});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetDownloadFileAsync(string guid, System.DateTime date) {
+            this.GetDownloadFileAsync(guid, date, null);
+        }
+        
+        /// <remarks/>
+        public void GetDownloadFileAsync(string guid, System.DateTime date, object userState) {
+            if ((this.GetDownloadFileOperationCompleted == null)) {
+                this.GetDownloadFileOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDownloadFileOperationCompleted);
+            }
+            this.InvokeAsync("GetDownloadFile", new object[] {
+                        guid,
+                        date}, this.GetDownloadFileOperationCompleted, userState);
+        }
+        
+        private void OnGetDownloadFileOperationCompleted(object arg) {
+            if ((this.GetDownloadFileCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDownloadFileCompleted(this, new GetDownloadFileCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SetDownloadFile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SetDownloadFile(string guid, System.DateTime date, string dest, string source) {
+            this.Invoke("SetDownloadFile", new object[] {
+                        guid,
+                        date,
+                        dest,
+                        source});
+        }
+        
+        /// <remarks/>
+        public void SetDownloadFileAsync(string guid, System.DateTime date, string dest, string source) {
+            this.SetDownloadFileAsync(guid, date, dest, source, null);
+        }
+        
+        /// <remarks/>
+        public void SetDownloadFileAsync(string guid, System.DateTime date, string dest, string source, object userState) {
+            if ((this.SetDownloadFileOperationCompleted == null)) {
+                this.SetDownloadFileOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetDownloadFileOperationCompleted);
+            }
+            this.InvokeAsync("SetDownloadFile", new object[] {
+                        guid,
+                        date,
+                        dest,
+                        source}, this.SetDownloadFileOperationCompleted, userState);
+        }
+        
+        private void OnSetDownloadFileOperationCompleted(object arg) {
+            if ((this.SetDownloadFileCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetDownloadFileCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetExecProgram", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetExecProgram(string guid, System.DateTime date) {
+            object[] results = this.Invoke("GetExecProgram", new object[] {
+                        guid,
+                        date});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetExecProgramAsync(string guid, System.DateTime date) {
+            this.GetExecProgramAsync(guid, date, null);
+        }
+        
+        /// <remarks/>
+        public void GetExecProgramAsync(string guid, System.DateTime date, object userState) {
+            if ((this.GetExecProgramOperationCompleted == null)) {
+                this.GetExecProgramOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetExecProgramOperationCompleted);
+            }
+            this.InvokeAsync("GetExecProgram", new object[] {
+                        guid,
+                        date}, this.GetExecProgramOperationCompleted, userState);
+        }
+        
+        private void OnGetExecProgramOperationCompleted(object arg) {
+            if ((this.GetExecProgramCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetExecProgramCompleted(this, new GetExecProgramCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SetExecProgram", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SetExecProgram(int idexec, System.DateTime date) {
+            this.Invoke("SetExecProgram", new object[] {
+                        idexec,
+                        date});
+        }
+        
+        /// <remarks/>
+        public void SetExecProgramAsync(int idexec, System.DateTime date) {
+            this.SetExecProgramAsync(idexec, date, null);
+        }
+        
+        /// <remarks/>
+        public void SetExecProgramAsync(int idexec, System.DateTime date, object userState) {
+            if ((this.SetExecProgramOperationCompleted == null)) {
+                this.SetExecProgramOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetExecProgramOperationCompleted);
+            }
+            this.InvokeAsync("SetExecProgram", new object[] {
+                        idexec,
+                        date}, this.SetExecProgramOperationCompleted, userState);
+        }
+        
+        private void OnSetExecProgramOperationCompleted(object arg) {
+            if ((this.SetExecProgramCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetExecProgramCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetException", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetException(string guid) {
+            object[] results = this.Invoke("GetException", new object[] {
+                        guid});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetExceptionAsync(string guid) {
+            this.GetExceptionAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void GetExceptionAsync(string guid, object userState) {
+            if ((this.GetExceptionOperationCompleted == null)) {
+                this.GetExceptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetExceptionOperationCompleted);
+            }
+            this.InvokeAsync("GetException", new object[] {
+                        guid}, this.GetExceptionOperationCompleted, userState);
+        }
+        
+        private void OnGetExceptionOperationCompleted(object arg) {
+            if ((this.GetExceptionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetExceptionCompleted(this, new GetExceptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SetDateDerniereConnexion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SetDateDerniereConnexion(string guid) {
+            this.Invoke("SetDateDerniereConnexion", new object[] {
+                        guid});
+        }
+        
+        /// <remarks/>
+        public void SetDateDerniereConnexionAsync(string guid) {
+            this.SetDateDerniereConnexionAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void SetDateDerniereConnexionAsync(string guid, object userState) {
+            if ((this.SetDateDerniereConnexionOperationCompleted == null)) {
+                this.SetDateDerniereConnexionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetDateDerniereConnexionOperationCompleted);
+            }
+            this.InvokeAsync("SetDateDerniereConnexion", new object[] {
+                        guid}, this.SetDateDerniereConnexionOperationCompleted, userState);
+        }
+        
+        private void OnSetDateDerniereConnexionOperationCompleted(object arg) {
+            if ((this.SetDateDerniereConnexionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetDateDerniereConnexionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SetIncrementeRelica", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SetIncrementeRelica(string guid) {
+            this.Invoke("SetIncrementeRelica", new object[] {
+                        guid});
+        }
+        
+        /// <remarks/>
+        public void SetIncrementeRelicaAsync(string guid) {
+            this.SetIncrementeRelicaAsync(guid, null);
+        }
+        
+        /// <remarks/>
+        public void SetIncrementeRelicaAsync(string guid, object userState) {
+            if ((this.SetIncrementeRelicaOperationCompleted == null)) {
+                this.SetIncrementeRelicaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetIncrementeRelicaOperationCompleted);
+            }
+            this.InvokeAsync("SetIncrementeRelica", new object[] {
+                        guid}, this.SetIncrementeRelicaOperationCompleted, userState);
+        }
+        
+        private void OnSetIncrementeRelicaOperationCompleted(object arg) {
+            if ((this.SetIncrementeRelicaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetIncrementeRelicaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -231,6 +657,230 @@ namespace FinMajInstall.ReferenceWSCtrlPc {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void TraceLogCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void TraceLogNewCompletedEventHandler(object sender, TraceLogNewCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TraceLogNewCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TraceLogNewCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetPlanningCompletedEventHandler(object sender, GetPlanningCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPlanningCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPlanningCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetArretCompletedEventHandler(object sender, GetArretCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetArretCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetArretCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetPlageHoraireCompletedEventHandler(object sender, GetPlageHoraireCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPlageHoraireCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPlageHoraireCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetRemLogInfoCompletedEventHandler(object sender, GetRemLogInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetRemLogInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetRemLogInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetDownloadFileCompletedEventHandler(object sender, GetDownloadFileCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetDownloadFileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDownloadFileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void SetDownloadFileCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetExecProgramCompletedEventHandler(object sender, GetExecProgramCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetExecProgramCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetExecProgramCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void SetExecProgramCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetExceptionCompletedEventHandler(object sender, GetExceptionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetExceptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetExceptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void SetDateDerniereConnexionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void SetIncrementeRelicaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

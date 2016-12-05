@@ -50,6 +50,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SynchroHeure.cs" />
     <Compile Include="Trace.cs" />
     <Compile Include="Web References\ReferenceWSCtrlPc\Reference.cs">
       <AutoGen>True</AutoGen>
